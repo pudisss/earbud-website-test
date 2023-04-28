@@ -1,0 +1,260 @@
+@import "./global/";
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+body {
+    background-color:#0F0F10;
+}
+
+li {
+    list-style-type: none;
+}
+
+.fs {
+    font-family: $font;
+
+}
+
+.fs-header {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 600;
+}
+
+.fs-header2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.fs-paragraph {
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 400;
+}
+
+.wrapper {
+    width: min(calc(100% - 4rem), 70.813rem);
+    margin-inline: auto;
+}
+
+
+header.header {
+    background-color:#0F0F10;
+    
+    padding: 2.5rem 0;
+    z-index: 1;
+    
+    .wrapper.header {
+        @include flex(center, space-between, row nowrap);
+    }
+    @include flex(center, space-between, row nowrap);
+    .cat1 {
+        @include flex(center, baseline, row nowrap);
+        column-gap: 5.938rem;
+
+        .links {z-index: 5;
+            @include flex(center, baseline, row nowrap);
+            column-gap: 3.625rem;
+
+            a {
+                font-family: $font;
+                transition: 0.3s ease-in;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 700;
+                color: #FFFFFF;
+
+                
+            }
+
+        }
+        
+        .shop-button {
+            width: 156px;
+            height: 55px;
+            background-color: #1E1E21;
+            border-radius: 8px;
+            border: 2px solid #1E1E21;
+            font-family: $font;
+            font-size: 15px;
+            font-weight: 400;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+
+            &:hover {
+                border: 2px solid white;
+                background-color: transparent;
+            }
+        }
+    }
+    .hamburger-icon {
+        display: none;
+        z-index: 3;
+    }
+    
+}
+
+section {
+    background-color:#0F0F10;
+    padding: 3rem 0;
+}
+
+.first-page {
+   
+    height: 100%;
+    
+    
+
+    @include flex(flex-start, flex-end, row nowrap);
+
+    
+    .headbud-image {
+        position: absolute;
+        top: 0;
+        left: 20%;
+    }
+    
+    
+    .text-section {
+        
+        z-index: 6;
+        
+        
+
+        @include flex(flex-start, baseline, column nowrap);
+        .onear-image {
+            width: min(434px, 90%);
+            height: 96px;
+            position: relative;
+            
+            left: 2rem;
+            z-index: 6;
+        }
+        .header {
+            color: #F2F2F3;
+            margin-bottom: 2rem;
+        }
+        .sub-header {
+            color: #F2F2F3;
+            margin-bottom: 1rem;
+        }
+        .paragraph {
+            width: 45vw;
+            color: #BDC0C2;
+        }
+        .button {
+            margin-top: 2.5rem;
+            width: min(248px, 40vw);
+            height: 55px;
+            background-color: #1E1E21;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            @include flex(center, space-evenly, row nowrap);
+
+            .sub-header1 {
+                font-size: 0.938rem;
+                font-weight: 400;
+                color: white;
+            }
+        }
+        
+
+    }
+}
+.partner {
+    height: 100%;
+    
+    @include flex(center, space-evenly, row nowrap);
+    column-gap: 0.5rem;
+    img {
+        width: min(100px, 20vw);
+    }
+}
+
+.specs {
+    overflow-x: hidden;
+    width: 100%;
+    
+    
+   
+    @include flex(center, baseline, column nowrap);
+
+    .header {
+        font-size: clamp(3.5rem, 3vw, 4.5rem);
+        font-weight: 400;
+        background: linear-gradient(180deg, #424245 0%, rgba(102, 102, 122, 0) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .row-split {
+        margin-top: 2.125rem;
+        @include flex(center, baseline, row nowrap);
+        column-gap: 4.875rem;
+        .split1 {
+            @include flex(flex-start, baseline, column nowrap);
+            row-gap: 1.5rem;
+
+            .container {
+                .sub-header {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                .paragraph {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    color: #BDC0C2;
+                }
+            }
+
+            .container:nth-child(1) {
+                margin-left: 2rem;
+            }
+            .container:nth-child(4) {
+                margin-left: 2rem;
+            }
+            
+        }
+        .spec-headphone-image {
+            width: min(300px, 80%);
+        }
+    }
+}
+
+// Media Query
+
+@media (max-width: 800px) {
+    header.header {
+        .cat1 {
+            display: none;
+        }
+        img.hamburger-icon {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: min(calc(100% - 1.5rem), 70.813rem);
+        margin-inline: auto;
+    }
+    
+    
+}

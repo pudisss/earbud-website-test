@@ -61,6 +61,7 @@ header.header {
     }
     @include flex(center, space-between, row nowrap);
     .cat1 {
+        transition: 0.3s ease-in;
         @include flex(center, baseline, row nowrap);
         column-gap: 5.938rem;
 
@@ -103,7 +104,17 @@ header.header {
     .hamburger-icon {
         display: none;
         z-index: 3;
+        cursor: pointer;
+       
+        
+        
     }
+    .toggle-label {
+        cursor: pointer;
+        z-index: 8;
+        display: none;
+    }
+
     
 }
 
@@ -113,11 +124,7 @@ section {
 }
 
 .first-page {
-   
     height: 100%;
-    
-    
-
     @include flex(flex-start, flex-end, row nowrap);
 
     
@@ -188,8 +195,6 @@ section {
 .specs {
     overflow-x: hidden;
     width: 100%;
-    
-    
    
     @include flex(center, baseline, column nowrap);
 
@@ -237,23 +242,435 @@ section {
     }
 }
 
+.case {
+    
+    height: 100%;
+    @include flex(center, baseline, column nowrap);
+
+    .header {
+        font-size: clamp(3.5rem, 3vw, 4.5rem);
+        font-weight: 400;
+        background: linear-gradient(180deg, #424245 0%, rgba(102, 102, 122, 0) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .split-column {
+        margin-top: 2.25rem;
+        @include flex(center, baseline, row nowrap);
+        column-gap: 5rem;
+        .case-image {
+            width: min(300px, 50vw);
+            height: 419px;
+            z-index: 1;
+        }
+
+        .text-section {
+            z-index: 2;
+            @include flex(flex-start, baseline, column nowrap);
+            .paragraph {
+                font-size: clamp(0.938rem, 4vw, 1rem);
+                font-weight: 400;
+                color: #BDC0C2;
+                width: min(242px, 40vw);
+            }    
+            .more-info {
+                height: 55px;
+                width: 156px;
+                background-color: #1E1E21;
+                border: none;
+                border-radius: 8px;
+                margin-top: 1rem;
+                font-size: 15px;
+                font-weight: 400;
+                color: white;
+                background-image: url("../../../public/more-info-icon.svg");
+                background-repeat: no-repeat;
+                background-position: 10% 50%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.immerse-music {
+    
+    width: min(calc(100% - 4rem), 60.5rem);
+    margin-inline: auto;
+
+    border: none;
+    border-radius: 0.75rem;
+    background-color: #181A1B;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+
+    .headbud-image-outer {
+        display: none;
+    }
+    .container {
+        column-gap: 5.25rem;
+        width: min(calc(100% - 4rem), 42.25rem);
+        margin-inline: auto;
+
+        @include flex(center, space-between, row nowrap);
+
+        .text-section {
+            @include flex(flex-start, baseline, column nowrap);
+            .header {
+                margin-bottom: 1rem;
+            }
+            .paragraph {
+                font-weight: 400;
+                font-size: 1rem;
+                color: #BDC0C2;
+            }
+            .buy-now-button{
+                background-color: #000000;
+                border: 1px solid #000000;
+                border-radius: 8px;
+                width: min(156px, 20vw);
+                height: 55px;
+                margin-top: 1rem;
+                background-image: url('../../../public/shop-logo.svg');
+                background-repeat: no-repeat;
+                background-position: 12.5% 50%;
+                cursor: pointer;
+                transition: 0.3s ease-in;
+                @include flex(center, center, row nowrap);
+
+                .paragraph {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: white;
+                }
+
+                &:hover {
+                    border: 1px solid white;
+                }
+            }
+            .headbud-image {
+                height: 241px;
+                width: min(350px, 40vw);
+            }
+        }
+
+    }
+
+
+}
+
+.choose-product {
+    @include flex(center, baseline, column nowrap);
+    margin-bottom: 11rem;
+    .header {
+        font-size: clamp(3.5rem, 3vw, 4.5rem);
+        font-weight: 400;
+        background: linear-gradient(180deg, #424245 0%, rgba(102, 102, 122, 0) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        text-align: center;
+    }
+    .grid-container {
+        margin-top: 5.375rem;
+        display: grid;
+        grid-template-columns: repeat(3, 162px);
+        grid-template-columns: repeat(3, 152px);
+        gap: 3rem;
+
+        .product {
+            background-color: #181A1B;
+            border: none;
+            border-radius: 8px;
+            @include flex(center, baseline, column nowrap);
+
+            .product-image {
+                position: relative;
+                bottom: 2rem;
+            }
+
+            .row {
+                width: min(calc(100% - 2rem), 8.75rem);
+                margin-inline: auto;
+                margin-bottom: 0.813rem;
+                @include flex(center, space-between, row nowrap);
+
+                .info {
+                    @include flex(flex-start, baseline, column nowrap);
+
+                    .sub-header {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #F2F2F3;
+                    }
+                    .sub-header1 {
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: #BDC0C2;
+
+                    }
+                }
+                .shop-button {
+                   
+                    width: 35px;
+                    height: 35px;
+                    background-color: #0A0A0B;
+                    border-radius: 8px;
+                    border: none;
+                }
+            }
+        }
+
+    }
+}
+
+.footer-container {
+    @include flex(center, baseline, column nowrap);
+    .row1 {
+        column-gap: 8.75rem;
+        @include flex(flex-start, baseline, row nowrap);
+
+
+        .col1 {
+            @include flex(center, baseline, row nowrap);
+            column-gap: 8.75rem;
+    
+        }
+        .support, .product {
+            @include flex(flex-start, baseline, column nowrap);
+
+            .header {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: white;
+            }
+            .links {
+                margin-top: 1rem;
+                @include flex(flex-start, baseline, column nowrap);
+                row-gap: 0.563rem;
+                a {
+                    text-decoration: none;
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #BDC0C2;
+                    font-family: "Poppins";
+                }
+            }
+        }
+        .contact {
+            @include flex(flex-start, baseline, column nowrap);
+
+            .email-input {
+                @include flex(center, space-between, row nowrap);
+                width: 346px;
+                height: 67px;
+                background-color: #181A1B;
+                border: none;
+                border-radius: 8px;
+
+                .container {
+                    width: min(calc(100% - 2rem), 19.813rem);
+                    margin-inline: auto;
+                    @include flex(center, space-between, row nowrap);
+
+                    .subscribe {
+                        width: 130px;
+                        height: 51px;
+                        background-color: #0A0A0B;
+                        border: none;
+                        border-radius: 8px;
+                        color: white;
+                        cursor: pointer;
+                        transition: 0.3s ease-in;
+
+                        &:hover {
+                            border: 1px solid white;
+                        }
+                    }
+                }
+            }
+
+            .row {
+                @include flex(center, baseline, row nowrap);
+                margin-top: 2rem;
+                column-gap: 1.25rem;
+
+                div {
+                    width: 32px;
+                    height: 32px;
+                    background-color: #181A1B;
+                    border-radius: 4px;
+                    @include flex(center, center, row nowrap);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .row2 {
+        margin-top: 9.188rem;
+        height: 5vh;
+    }
+}
+
+
+
+
+
+
 // Media Query
 
+
+@media (max-width: 1000px) {
+    .footer-container {
+        .row1 {
+            column-gap: 3rem;
+
+            .col1 {
+                column-gap: 3rem;
+            }
+        }
+    }
+}
 @media (max-width: 800px) {
     header.header {
         .cat1 {
             display: none;
         }
-        img.hamburger-icon {
+        
+        
+
+
+        .toggle-label {
             display: block;
+        }
+
+        .hamburger-icon:checked ~ .cat1 {
+            z-index: 8;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 5rem;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+
+
+            @include flex(center, baseline, column nowrap);
+
+            .links {
+                display: block;
+                width: 100%;
+                @include flex(center, baseline, column nowrap);
+                li {
+                    width: 100%;
+                    display: block;
+                    padding: 2rem;
+                    transition: 0.3s ease-in;
+
+                    &:hover {
+                        background-color: white;
+
+                    }
+                    &:hover a {
+                        color: black;
+                    }
+                    @include flex(center, center, column nowrap);
+                }
+                
+            }
+            .shop-button {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    .immerse-music {
+        background-image: url("../../../public/headphonebud.svg");
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        
+        .container {
+            
+            
+            .headbud-image {
+                display: none;
+            }
+            .text-section {
+                .buy-now-button {
+                    
+                    background-position: 50% 50%;
+
+                    .paragraph {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .footer-container {
+        .row1 {
+            @include flex(center, baseline, column nowrap);
+            row-gap: 5.5rem;
+
+            .col2 .contact {
+                @include flex(center, baseline, column nowrap);
+            }
         }
     }
 }
 
+
+
+
+
+@media (max-width: 37.5rem) /*600px*/ {
+    .choose-product {
+        .grid-container {
+            grid-template-columns: repeat(2, 162px);
+            gap: 2rem;
+        }
+    }
+
+}
+
+
+// Media Query 
 @media (max-width: 500px) {
     .container {
         width: min(calc(100% - 1.5rem), 70.813rem);
         margin-inline: auto;
+    }
+
+    .case .split-column {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .case .split-column .case-image {
+        position: absolute;
+        left: -20%;
+    }
+    .immerse-music {
+        
+        .container {
+            .headbud-image {
+                display: none;
+            }
+        }
+    }
+    .choose-product {
+        .grid-container {
+            gap: 2rem;
+        }
     }
     
     
